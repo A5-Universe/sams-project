@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student - Student Attendance Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SAMS</h2>
+                <p>Student Attendance</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="add-student.html"><i class="fas fa-user-plus"></i> Add Student</a></li>
+                    <li><a href="mark-attendance.html"><i class="fas fa-clipboard-check"></i> Mark Attendance</a></li>
+                    <li><a href="view-attendance.html"><i class="fas fa-calendar-alt"></i> View Attendance</a></li>
+                    <li><a href="edit-attendance.html"><i class="fas fa-edit"></i> Edit Attendance</a></li>
+                    <li class="active"><a href="delete-student.html"><i class="fas fa-user-minus"></i> Delete Student</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Delete Student</h1>
+                    <p>Remove student records from the system</p>
+                </div>
+                <div class="user-info">
+                    <span class="notification"><i class="fas fa-bell"></i></span>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Student Records</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="filter-controls">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="searchStudent">Search Student</label>
+                                    <input type="text" id="searchStudent" name="searchStudent" placeholder="Search by name, roll no, or class">
+                                </div>
+                                <div class="form-group">
+                                    <label for="filterDeleteClass">Class</label>
+                                    <select id="filterDeleteClass" name="filterDeleteClass">
+                                        <option value="">All Classes</option>
+                                        <option value="10">Class 10</option>
+                                        <option value="11">Class 11</option>
+                                        <option value="12">Class 12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="filterDeleteSection">Section</label>
+                                    <select id="filterDeleteSection" name="filterDeleteSection">
+                                        <option value="">All Sections</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="warning-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Warning: Deleting a student will permanently remove all their records, including attendance history. This action cannot be undone.</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table student-table">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No.</th>
+                                        <th>Student Name</th>
+                                        <th>Class</th>
+                                        <th>Section</th>
+                                        <th>Email</th>
+                                        <th>Parent Contact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1001</td>
+                                        <td>John Smith</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>john.smith@example.com</td>
+                                        <td>+1 234-567-8901</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1002</td>
+                                        <td>Emily Johnson</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>emily.johnson@example.com</td>
+                                        <td>+1 234-567-8902</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1003</td>
+                                        <td>Michael Brown</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>michael.brown@example.com</td>
+                                        <td>+1 234-567-8903</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1004</td>
+                                        <td>Sarah Davis</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>sarah.davis@example.com</td>
+                                        <td>+1 234-567-8904</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1005</td>
+                                        <td>David Wilson</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>david.wilson@example.com</td>
+                                        <td>+1 234-567-8905</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="pagination">
+                            <button class="btn btn-sm"><i class="fas fa-angle-double-left"></i></button>
+                            <button class="btn btn-sm"><i class="fas fa-angle-left"></i></button>
+                            <button class="btn btn-sm active">1</button>
+                            <button class="btn btn-sm">2</button>
+                            <button class="btn btn-sm">3</button>
+                            <button class="btn btn-sm"><i class="fas fa-angle-right"></i></button>
+                            <button class="btn btn-sm"><i class="fas fa-angle-double-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Confirmation Modal -->
+            <div class="modal" id="deleteModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Confirm Deletion</h3>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete the student record for <strong>John Smith</strong>?</p>
+                        <p class="warning">This action cannot be undone and will permanently remove all associated attendance records.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

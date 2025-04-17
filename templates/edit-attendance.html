@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Attendance - Student Attendance Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SAMS</h2>
+                <p>Student Attendance</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="add-student.html"><i class="fas fa-user-plus"></i> Add Student</a></li>
+                    <li><a href="mark-attendance.html"><i class="fas fa-clipboard-check"></i> Mark Attendance</a></li>
+                    <li><a href="view-attendance.html"><i class="fas fa-calendar-alt"></i> View Attendance</a></li>
+                    <li class="active"><a href="edit-attendance.html"><i class="fas fa-edit"></i> Edit Attendance</a></li>
+                    <li><a href="delete-student.html"><i class="fas fa-user-minus"></i> Delete Student</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Edit Attendance</h1>
+                    <p>Modify attendance records</p>
+                </div>
+                <div class="user-info">
+                    <span class="notification"><i class="fas fa-bell"></i></span>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Edit Attendance Record</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="filter-controls">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="editDate">Date</label>
+                                    <input type="date" id="editDate" name="editDate" value="2025-04-15">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editClass">Class</label>
+                                    <select id="editClass" name="editClass">
+                                        <option value="">Select Class</option>
+                                        <option value="10" selected>Class 10</option>
+                                        <option value="11">Class 11</option>
+                                        <option value="12">Class 12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editSection">Section</label>
+                                    <select id="editSection" name="editSection">
+                                        <option value="">Select Section</option>
+                                        <option value="A" selected>A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary"><i class="fas fa-search"></i> Find Records</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit-history">
+                            <div class="history-header">
+                                <h3>Edit History</h3>
+                                <span class="badge">Class 10A - April 15, 2025</span>
+                            </div>
+                            <div class="history-info">
+                                <p><i class="fas fa-info-circle"></i> Last edited by <strong>John Doe</strong> on <strong>April 16, 2025, 09:45 AM</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table attendance-edit-table">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No.</th>
+                                        <th>Student Name</th>
+                                        <th>Current Status</th>
+                                        <th>New Status</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1001</td>
+                                        <td>John Smith</td>
+                                        <td><span class="status-badge present">Present</span></td>
+                                        <td>
+                                            <div class="attendance-toggle">
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1001" value="present" checked>
+                                                    <span class="radio-label present">Present</span>
+                                                </label>
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1001" value="absent">
+                                                    <span class="radio-label absent">Absent</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control-sm" placeholder="Add remarks">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1002</td>
+                                        <td>Emily Johnson</td>
+                                        <td><span class="status-badge present">Present</span></td>
+                                        <td>
+                                            <div class="attendance-toggle">
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1002" value="present" checked>
+                                                    <span class="radio-label present">Present</span>
+                                                </label>
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1002" value="absent">
+                                                    <span class="radio-label absent">Absent</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control-sm" placeholder="Add remarks">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1003</td>
+                                        <td>Michael Brown</td>
+                                        <td><span class="status-badge absent">Absent</span></td>
+                                        <td>
+                                            <div class="attendance-toggle">
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1003" value="present" checked>
+                                                    <span class="radio-label present">Present</span>
+                                                </label>
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1003" value="absent">
+                                                    <span class="radio-label absent">Absent</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control-sm" value="Medical certificate provided" placeholder="Add remarks">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1004</td>
+                                        <td>Sarah Davis</td>
+                                        <td><span class="status-badge present">Present</span></td>
+                                        <td>
+                                            <div class="attendance-toggle">
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1004" value="present" checked>
+                                                    <span class="radio-label present">Present</span>
+                                                </label>
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1004" value="absent">
+                                                    <span class="radio-label absent">Absent</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control-sm" placeholder="Add remarks">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1005</td>
+                                        <td>David Wilson</td>
+                                        <td><span class="status-badge absent">Absent</span></td>
+                                        <td>
+                                            <div class="attendance-toggle">
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1005" value="present">
+                                                    <span class="radio-label present">Present</span>
+                                                </label>
+                                                <label class="radio-container">
+                                                    <input type="radio" name="edit_attendance_1005" value="absent" checked>
+                                                    <span class="radio-label absent">Absent</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control-sm" value="Family emergency" placeholder="Add remarks">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance - Student Attendance Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SAMS</h2>
+                <p>Student Attendance</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="add-student.html"><i class="fas fa-user-plus"></i> Add Student</a></li>
+                    <li><a href="mark-attendance.html"><i class="fas fa-clipboard-check"></i> Mark Attendance</a></li>
+                    <li class="active"><a href="view-attendance.html"><i class="fas fa-calendar-alt"></i> View Attendance</a></li>
+                    <li><a href="edit-attendance.html"><i class="fas fa-edit"></i> Edit Attendance</a></li>
+                    <li><a href="delete-student.html"><i class="fas fa-user-minus"></i> Delete Student</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>View Attendance</h1>
+                    <p>Check and analyze attendance records</p>
+                </div>
+                <div class="user-info">
+                    <span class="notification"><i class="fas fa-bell"></i></span>
+                    <div class="user">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Attendance Records</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="filter-controls">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="filterClass">Class</label>
+                                    <select id="filterClass" name="filterClass">
+                                        <option value="">All Classes</option>
+                                        <option value="10" selected>Class 10</option>
+                                        <option value="11">Class 11</option>
+                                        <option value="12">Class 12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="filterSection">Section</label>
+                                    <select id="filterSection" name="filterSection">
+                                        <option value="">All Sections</option>
+                                        <option value="A" selected>A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="filterMonth">Month</label>
+                                    <select id="filterMonth" name="filterMonth">
+                                        <option value="">All Months</option>
+                                        <option value="1">January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4" selected>April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="filterStudent">Student</label>
+                                    <input type="text" id="filterStudent" name="filterStudent" placeholder="Search by name or roll no.">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-primary btn-sm"><i class="fas fa-search"></i> Apply Filters</button>
+                                <button class="btn btn-secondary btn-sm"><i class="fas fa-redo"></i> Reset</button>
+                                <button class="btn btn-success btn-sm"><i class="fas fa-file-export"></i> Export</button>
+                                <button class="btn btn-info btn-sm"><i class="fas fa-print"></i> Print</button>
+                            </div>
+                        </div>
+
+                        <div class="attendance-summary">
+                            <div class="summary-card">
+                                <div class="summary-title">Working Days</div>
+                                <div class="summary-value">22</div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-title">Average Attendance</div>
+                                <div class="summary-value">85%</div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-title">Present Days</div>
+                                <div class="summary-value">19</div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-title">Absent Days</div>
+                                <div class="summary-value">3</div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table attendance-record-table">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No.</th>
+                                        <th>Student Name</th>
+                                        <th>Class</th>
+                                        <th>Section</th>
+                                        <th>Present Days</th>
+                                        <th>Absent Days</th>
+                                        <th>Attendance %</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1001</td>
+                                        <td>John Smith</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>20</td>
+                                        <td>2</td>
+                                        <td>90.9%</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1002</td>
+                                        <td>Emily Johnson</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>21</td>
+                                        <td>1</td>
+                                        <td>95.5%</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1003</td>
+                                        <td>Michael Brown</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>18</td>
+                                        <td>4</td>
+                                        <td>81.8%</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1004</td>
+                                        <td>Sarah Davis</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>19</td>
+                                        <td>3</td>
+                                        <td>86.4%</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1005</td>
+                                        <td>David Wilson</td>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>17</td>
+                                        <td>5</td>
+                                        <td>77.3%</td>
+                                        <td>
+                                            <button class="btn btn-info btn-xs"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="pagination">
+                            <button class="btn btn-sm"><i class="fas fa-angle-double-left"></i></button>
+                            <button class="btn btn-sm"><i class="fas fa-angle-left"></i></button>
+                            <button class="btn btn-sm active">1</button>
+                            <button class="btn btn-sm">2</button>
+                            <button class="btn btn-sm">3</button>
+                            <button class="btn btn-sm"><i class="fas fa-angle-right"></i></button>
+                            <button class="btn btn-sm"><i class="fas fa-angle-double-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
