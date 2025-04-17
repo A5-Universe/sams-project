@@ -18,16 +18,16 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="{% url 'index.html' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                     <li class="active"><a href="{% url 'add_student' %}"><i class="fas fa-user-plus"></i> Add Student</a></li>
-                    <li><a href="{% url 'mark-attendance.html' %}"><i class="fas fa-clipboard-check"></i> Mark Attendance</a></li>
-                    <li><a href="{% url 'view-attendance.html' %}"><i class="fas fa-calendar-alt"></i> View Attendance</a></li>
-                    <li><a href="{% url 'edit-attendance.html' %}"><i class="fas fa-edit"></i> Edit Attendance</a></li>
-                    <li><a href="{% url 'delete-student.html' %}"><i class="fas fa-user-minus"></i> Delete Student</a></li>
+                    <li><a href="{% url 'mark-attendance' %}"><i class="fas fa-clipboard-check"></i> Mark Attendance</a></li>
+                    <li><a href="{% url 'view-attendance' %}"><i class="fas fa-calendar-alt"></i> View Attendance</a></li>
+                    <li><a href="{% url 'edit-attendance' %}"><i class="fas fa-edit"></i> Edit Attendance</a></li>
+                    <li><a href="{% url 'delete-student' %}"><i class="fas fa-user-minus"></i> Delete Student</a></li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <a href="{% url 'login.html' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="{% url 'login' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </aside>
 
